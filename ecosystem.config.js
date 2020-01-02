@@ -27,7 +27,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:Nick930826/nick-blog.git',
       path: '/workspace/nick-blog',
-      'post-deploy': 'git reset --hard && git checkout master && git pull && npm install && rm -rf dist/static && npm run build && pm2 startOrReload ecosystem.config.js --env production',
+      'post-deploy': 'git reset --hard && git checkout master && git pull && npm install && npm run build && pm2 startOrReload ecosystem.config.js --env production',
       env: {
         NODE_ENV: 'production'
       }
