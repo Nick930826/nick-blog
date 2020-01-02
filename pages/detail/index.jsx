@@ -7,7 +7,7 @@ import marked from 'marked'
 import hljs from "highlight.js"
 
 import { article } from 'services'
-import { Header, Author, Advert, Footer, Tocify } from 'components'
+import { Header, Author, Advert, Footer } from 'components'
 
 
 
@@ -53,11 +53,11 @@ let markdown='# P01:课程介绍和环境搭建\n' +
 const Detail = ({ detail = {} }) => {
   const renderer = new marked.Renderer();
   const [ myDetail, setDetail ] = useState(detail)
-  const tocify = new Tocify()
-  renderer.heading = function(text, level, raw) {
-    const anchor = tocify.add(text, level);
-    return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`;
-  };
+  // const tocify = new Tocify()
+  // renderer.heading = function(text, level, raw) {
+  //   const anchor = tocify.add(text, level);
+  //   return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`;
+  // };
   marked.setOptions({
     renderer: renderer, 
     gfm: true,
@@ -109,14 +109,14 @@ const Detail = ({ detail = {} }) => {
         <Col className={styles.right} xs={0} sm={0} md={7} lg={5} xl={4}>
           <Author />
           <Advert />
-          <Affix offsetTop={5}>
+          {/* <Affix offsetTop={5}>
             <div className={cx(styles.detailNav, styles.Box)}>
               <div className={styles.navTitle}>文章目录</div>
                 <div className="toc-list">
                   {tocify && tocify.render()}
                 </div>
             </div>
-          </Affix>
+          </Affix> */}
         </Col>
       </Row>
       <Footer/>
