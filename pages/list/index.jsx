@@ -8,11 +8,8 @@ import styles from './style.less'
 
 const typeMap = ['视频教程', '文章', '生活']
 
-const MyList = ({ list, id }) => {
-  const [myList, setList] = useState([])
-  useEffect(() => {
-    setList(list)
-  }, [])
+const MyList = ({ list = [], id }) => {
+  const [myList, setList] = useState(list)
   return <div className={styles.list}>
     <Head>
       <title>List</title>
@@ -23,7 +20,7 @@ const MyList = ({ list, id }) => {
         <div className={styles.bread}>
           <Breadcrumb>
             <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-            <Breadcrumb.Item>{typeMap[Number(id) - 2]}</Breadcrumb.Item>
+            {/* <Breadcrumb.Item>{typeMap[Number(id) - 2]}</Breadcrumb.Item> */}
           </Breadcrumb>
         </div>
         <List
