@@ -5,13 +5,10 @@ const config = require('./utils/config')
 const port = config.isDev ? 3001 : 3001
 const app = next({ dev: config.isDev })
 const handle = app.getRequestHandler()
-let assetPrefix = ''
 app.prepare().then(() => {
   const server = new Koa()
   server.use(async (ctx, next) => {
-    ctx.req.koaContext = ctx
     await handle(ctx.req, ctx.res)
-    app.setAssetPrefix(assetPrefix)
     ctx.respond = false
   })
   server.listen(port, () => {
