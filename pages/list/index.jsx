@@ -12,7 +12,7 @@ const MyList = ({ list, id }) => {
   const [myList, setList] = useState([])
   useEffect(() => {
     setList(list)
-  })
+  }, [])
   return <div className={styles.list}>
     <Head>
       <title>List</title>
