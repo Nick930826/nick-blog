@@ -6,7 +6,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:Nick930826/nick-blog.git',
       path: '/workspace/nick-blog',
-      'post-deploy': 'git reset --hard && git checkout master && git pull && rm -rf dist/static && npm install && npm run build && npm run dev3',
+      'post-deploy': 'git reset --hard && git checkout master && git pull && rm -rf dist/static && npm install && npm run build && npm run start',
       env: {
         NODE_ENV: 'production'
       }
