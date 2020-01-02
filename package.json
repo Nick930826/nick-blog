@@ -7,7 +7,7 @@
     "dev3": "NODE_ENV=development pm2 start server.js",
     "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production pm2 restart server.js"
+    "start": "NODE_ENV=production next start -p 3001"
   },
   "dependencies": {
     "antd": "^3.25.0",
