@@ -6,8 +6,8 @@
     "dev2": "NODE_ENV=development node server.js",
     "dev3": "NODE_ENV=development pm2 start server.js",
     "dev": "next dev",
-    "build": "next build && PORT=3001 npm start",
-    "start": "next start -p $PORT"
+    "build": "next build",
+    "start": "NODE_ENV=production pm2 start server.js"
   },
   "dependencies": {
     "antd": "^3.25.0",

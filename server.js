@@ -2,7 +2,7 @@ const Koa = require('koa')
 const next = require('next')
 const config = require('./utils/config')
 
-const port = config.isDev ? 3008 : 3001
+const port = config.isDev ? 3001 : 3001
 const app = next({ dev: config.isDev })
 const handle = app.getRequestHandler()
 app.prepare().then(() => {

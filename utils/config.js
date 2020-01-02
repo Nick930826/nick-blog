@@ -29,7 +29,7 @@ let pageDomain = ''
 
 if (evn.isDev) {
   pageDomain = 'http://localhost:3001'
-  requestBaseURL = '//127.0.0.1:7001'
+  requestBaseURL = '//47.99.134.126:7001'
   assetPrefix = ''
 } else if (evn.isBeta) {
   pageDomain = 'http://www-dzn.yiwei.com'
