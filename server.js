@@ -8,10 +8,14 @@ const handle = app.getRequestHandler()
 let assetPrefix = ''
 app.prepare().then(() => {
   const server = new Koa()
-  server.use(async (ctx, next) => {
-    ctx.req.koaContext = ctx
+  // server.use(async (ctx, next) => {
+  //   ctx.req.koaContext = ctx
+  //   await handle(ctx.req, ctx.res)
+  //   app.setAssetPrefix(assetPrefix)
+  //   ctx.respond = false
+  // })
+  router.get('*', async ctx => {
     await handle(ctx.req, ctx.res)
-    app.setAssetPrefix(assetPrefix)
     ctx.respond = false
   })
   server.listen(port, () => {
