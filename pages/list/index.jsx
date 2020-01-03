@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import {Row, Col, List, Icon, Breadcrumb } from 'antd'
 import moment from 'moment'
 import { article } from 'services'
@@ -10,6 +11,9 @@ const typeMap = ['视频教程', '文章', '生活']
 
 const MyList = ({ list = [], id }) => {
   const [myList, setList] = useState(list)
+  useEffect(() => {
+    setList(list)
+  }, [])
   return <div className={styles.list}>
     <Head>
       <title>List</title>
@@ -28,13 +32,17 @@ const MyList = ({ list = [], id }) => {
           dataSource={myList}
           renderItem={item => (
             <List.Item key={item.id}>
-              <div className={styles.listTitle}>{item.title}</div>
+              <div className={styles.listTitle}>
+                <Link href={{pathname:'/detail',query:{id:item.id}}}>
+                  <a>{item.title}</a>
+                </Link>
+              </div>
               <div className={styles.listIcon}>
-                <span><Icon type='calendar' />{moment(item.addTime).format('YYYY-MM-DD HH:mm:ss')}</span>
+                <span><Icon type='calendar' />{moment(item.addTime).format('YYYY-MM-DD')}</span>
                 <span><Icon type='folder' />{item.type_id}</span>
                 <span><Icon type='fire' /> {item.view_count}人</span>
               </div>
-              <div className={styles.listContext}>{item.article_content}</div>
+              <div className={styles.listContext}>{item.introduce}</div>
             </List.Item>
           )}
         />
@@ -48,11 +56,9 @@ const MyList = ({ list = [], id }) => {
   </div>
 }
 
-MyList.getInitialProps = async (context)=>{
-
-  let id =context.query.id
-  const result  = await article.listByTypeId({ id })
-  return { list: result, id }
+MyList.getInitialProps = async ()=>{
+  const result  = await article.list()
+  return { list: result.data }
 }
 
 export default MyList

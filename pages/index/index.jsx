@@ -9,8 +9,10 @@ import { Header, Author, Advert, Footer } from 'components'
 import styles from './style.less'
 
 const Home = ({ list = [] }) => {
-  const [ mylist , setMylist ] = useState(list)
-
+  const [ mylist, setMylist ] = useState(list)
+  useEffect(() => {
+    setMylist(list)
+  }, [])
   return <div className={styles.home}>
     <Head>
       <title>Home</title>
@@ -51,7 +53,7 @@ const Home = ({ list = [] }) => {
 Home.getInitialProps = async () => {
   const result = await article.list()
   return {
-    list: result
+    list: result.data
   }
 }
 
