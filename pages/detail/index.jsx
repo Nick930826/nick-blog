@@ -42,7 +42,7 @@ const Detail = ({ detail = {} }) => {
         <title>详情</title>
       </Head>
       <Header />
-      <Row className={styles.main} type='flex' justify='center'>
+      <Row className={styles.main} type='flex' justify='center' style={{ marginTop: 15 }}>
         <Col className={styles.left} xs={24} sm={24} md={16} lg={18} xl={14}  >
             <div>
               <div className={styles.breadDiv}>
