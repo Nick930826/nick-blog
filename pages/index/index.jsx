@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Row, Col, List, Icon } from 'antd'
 import { article } from 'services'
 import moment from 'moment'
-
 import { Header, Author, Advert, Footer } from 'components'
 import styles from './style.less'
 
@@ -51,10 +50,8 @@ const Home = ({ list = [] }) => {
 }
 
 Home.getInitialProps = async () => {
-  const result = await article.list()
-  return {
-    list: result.data
-  }
+  const result  = await article.list()
+  return { list: result.data }
 }
 
 export default Home
