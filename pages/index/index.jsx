@@ -31,7 +31,7 @@ const Home = ({ list = [] }) => {
                 </Link>
               </div>
               <div className={styles.listIcon}>
-                <span><Icon type='calendar' />{moment(item.addTime).format('YYYY-MM-DD HH:mm:ss')}</span>
+                <span><Icon type='calendar' />{moment(item.addTime).format('YYYY-MM-DD')}</span>
                 <span><Icon type='folder' />{item.type_id}</span>
                 <span><Icon type='fire' /> {item.view_count}人</span>
               </div>
@@ -51,7 +51,7 @@ const Home = ({ list = [] }) => {
 
 Home.getInitialProps = async () => {
   const result  = await article.list()
-  return { list: result.data }
+  return { list: result }
 }
 
 export default Home

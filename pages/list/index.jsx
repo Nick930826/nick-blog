@@ -7,7 +7,7 @@ import { article } from 'services'
 import { Header, Author, Advert, Footer } from 'components'
 import styles from './style.less'
 
-const typeMap = ['视频教程', '文章', '生活']
+const typeMap = ['', '', '', '生活']
 
 const MyList = ({ list = [], id }) => {
   const [myList, setList] = useState(list)
@@ -24,7 +24,7 @@ const MyList = ({ list = [], id }) => {
         <div className={styles.bread}>
           <Breadcrumb>
             <Breadcrumb.Item><a href="/">首页</a></Breadcrumb.Item>
-            {/* <Breadcrumb.Item>{typeMap[Number(id) - 2]}</Breadcrumb.Item> */}
+            <Breadcrumb.Item><a>{typeMap[Number(id)]}</a></Breadcrumb.Item>
           </Breadcrumb>
         </div>
         <List
@@ -56,9 +56,10 @@ const MyList = ({ list = [], id }) => {
   </div>
 }
 
-MyList.getInitialProps = async ()=>{
+MyList.getInitialProps = async (ctx)=>{
+  const id = ctx.query.id
   const result  = await article.list()
-  return { list: result.data }
+  return { list: result, id }
 }
 
 export default MyList

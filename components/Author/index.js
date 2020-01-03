@@ -6,7 +6,7 @@ import styles from './style.less'
 const Author =()=>{
     return (
         <div className={cx(styles.authorDiv, styles.commBox)}>
-            <div> <Avatar size={100} src=''  /></div>
+            <div> <Avatar size={100} src='//s.weituibao.com/1578017065654/avatar.jpeg'  /></div>
             <div className={styles.authorIntroduction}>
                 大胡子程序员，专注于WEB和移动前端开发
                 <Divider>社交账号</Divider>
