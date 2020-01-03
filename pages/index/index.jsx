@@ -51,7 +51,7 @@ const Home = ({ list = [] }) => {
 
 Home.getInitialProps = async () => {
   const result  = await article.list()
-  return { list: result }
+  return { list: result.data }
 }
 
 export default Home
