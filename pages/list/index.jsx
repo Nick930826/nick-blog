@@ -16,7 +16,7 @@ const MyList = ({ list = [], id }) => {
   }, [])
   return <div className={styles.list}>
     <Head>
-      <title>List</title>
+      <title>列表</title>
     </Head>
     <Header />
     <Row className={styles.main} type='flex' justify='center'>
@@ -38,9 +38,9 @@ const MyList = ({ list = [], id }) => {
                 </Link>
               </div>
               <div className={styles.listIcon}>
-                <span><Icon type='calendar' />{moment(item.addTime).format('YYYY-MM-DD')}</span>
-                <span><Icon type='folder' />{item.type_id}</span>
-                <span><Icon type='fire' /> {item.view_count}人</span>
+                <span><Icon type='calendar' /> {moment(item.addTime).format('YYYY-MM-DD')}</span>
+                {/* <span><Icon type='folder' />{item.type_id}</span> */}
+                <span><Icon type='eye' /> {item.view_count}人</span>
               </div>
               <div className={styles.listContext}>{item.introduce}</div>
             </List.Item>

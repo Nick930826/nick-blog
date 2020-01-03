@@ -14,13 +14,13 @@ const Home = ({ list = [] }) => {
   }, [])
   return <div className={styles.home}>
     <Head>
-      <title>Home</title>
+      <title>首页</title>
     </Head>
     <Header />
     <Row className={styles.main} type='flex' justify='center'>
       <Col className={styles.left} xs={24} sm={24} md={16} lg={18} xl={14}>
         <List
-          header={<div className={styles.headerTitle}>最新日志</div>}
+          header={<div className={styles.headerTitle}>最新文章</div>}
           itemLayout={'vertical'}
           dataSource={mylist}
           renderItem={item => (
@@ -31,9 +31,9 @@ const Home = ({ list = [] }) => {
                 </Link>
               </div>
               <div className={styles.listIcon}>
-                <span><Icon type='calendar' />{moment(item.addTime).format('YYYY-MM-DD')}</span>
-                <span><Icon type='folder' />{item.type_id}</span>
-                <span><Icon type='fire' /> {item.view_count}人</span>
+                <span><Icon type='calendar' /> {moment(item.addTime).format('YYYY-MM-DD')}</span>
+                {/* <span><Icon type='folder' />{item.type_id}</span> */}
+                <span><Icon type='eye' /> {item.view_count}人</span>
               </div>
               <div className={styles.listContext}>{item.introduce}</div>
             </List.Item>
