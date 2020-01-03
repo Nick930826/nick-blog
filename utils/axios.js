@@ -9,7 +9,13 @@ axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 axios.interceptors.response.use(res => {
-  if (config.isServer) return res.data || res
+  if (config.isServer) {
+    if (config.isDev) {
+      return res.data || res
+    } else {
+      return res.data ? res.data.data : res
+    }
+  }
   if (typeof res.data !== 'object') {
     console.error('数据格式响应错误:', res.data)
     message.error('服务端异常！')
