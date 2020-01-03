@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'nick-blog-admin',
+      name: 'nick-blog',
       script: 'server.js',
       exec_mode: 'cluster',
       instances: process.argv.includes('beta') ? 1 : 'max',
