@@ -51,6 +51,7 @@ const Home = ({ list = [] }) => {
 
 Home.getInitialProps = async () => {
   const result  = await article.list()
+  if (result && result.length) result.sort((a, b) => b.id - a.id)
   return { list: result }
 }
 
