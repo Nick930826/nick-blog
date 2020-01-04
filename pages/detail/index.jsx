@@ -56,9 +56,9 @@ const Detail = ({ detail = {} }) => {
                 {myDetail.title}
                 </div>
                 <div className={cx(styles.listIcon)}>
-                  <span><Icon type='calendar' />{moment(myDetail.addTime).format('YYYY-MM-DD')}</span>
-                  <span><Icon type='folder' />{myDetail.type_id}</span>    
-                  <span><Icon type='fire' /> {myDetail.view_count || 0}人</span>
+                  <span><Icon type='calendar' /> {moment(myDetail.addTime).format('YYYY-MM-DD')}</span>
+                  {/* <span><Icon type='folder' /> {myDetail.type_id}</span>     */}
+                  <span><Icon type='fire' /> {myDetail.view_count || 0} 人</span>
                 </div>
                 <div className={styles.detailContent} dangerouslySetInnerHTML={{ __html: html }}>
                   

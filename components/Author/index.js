@@ -10,7 +10,7 @@ const Author = () => {
             <Avatar size={100} src='//s.weituibao.com/1578017065654/avatar.jpeg' />
         </div>
         <div className={styles.authorIntroduction}>
-            大胡子程序员，专注于WEB和移动前端开发
+            <span className={styles.nick}>大胡子程序员，专注于WEB和移动前端开发</span>
             <Divider>社交账号</Divider>
             <a target='_blank' href='https://github.com/Nick930826'>
               <Avatar size={28} icon='github' className={styles.account}  />

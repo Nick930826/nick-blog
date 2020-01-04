@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col, Menu, Icon } from 'antd'
+import Link from 'next/link'
 import Router from 'next/router'
 import { article } from 'services'
 import styles from './style.less'
@@ -23,7 +24,7 @@ const Header = ({  }) => {
   return <div className={styles.header}>
     <Row type='flex' justify='center'>
       <Col xs={24} sm={24} md={14} lg={15} xl={14}>
-        <span className={styles.logo}>前端烂笔头</span>
+        <Link href='/'><span className={styles.logo}>前端烂笔头</span></Link>
         <span className={styles.txt}>专注前端开发</span>
       </Col>
       <Col className={styles.menu} xs={0} sm={0} md={10} lg={8} xl={4}>
