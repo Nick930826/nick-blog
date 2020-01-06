@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
         <meta name="description" content="前端烂笔头"></meta>
         <link rel='icon' href='//s.weituibao.com/1578044053340/favicon.ico' />
         <link rel='stylesheet' href='//s.weituibao.com/1578062291368/nprogress.css' />
+        <script src='//s.weituibao.com/1578280528215/baidutongji.js' />
       </Head>
       <body >
         <Main />
