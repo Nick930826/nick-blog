@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
       <body >
         <Main />
         <NextScript />
-        <script src='/baidutongji.js'></script>
+        <script src='/static/baidutongji.js'></script>
       </body>
     </html>
   }
