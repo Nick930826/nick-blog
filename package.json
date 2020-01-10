@@ -8,7 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "prd": "NODE_ENV=production pm2 start server.js",
-    "start": "next start"
+    "start": "next start",
+    "publish": "pm2 deploy production"
   },
   "dependencies": {
     "antd": "^3.25.0",
