@@ -39,7 +39,7 @@ const Detail = ({ detail = {} }) => {
   return (
     <div className={styles.detail}>
       <Head>
-        <title>详情</title>
+        <title>{myDetail.title || '详情'}</title>
       </Head>
       <Header />
       <Row className={styles.main} type='flex' justify='center' style={{ marginTop: 15 }}>
