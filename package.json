@@ -17,7 +17,7 @@
     "classnames": "^2.2.6",
     "highlight.js": "^9.16.2",
     "koa": "^2.11.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "markdown-navbar": "^1.0.7",
     "marked": "^0.7.0",
     "moment": "^2.24.0",
